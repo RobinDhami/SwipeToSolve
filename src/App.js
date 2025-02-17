@@ -24,7 +24,7 @@ function App() {
           </ul>
         </nav>
       </header>
-
+{/* work on banner and navbar*/}
       {/* HERO SECTION */}
       <section className="hero-section">
         <div className="hero-overlay">
