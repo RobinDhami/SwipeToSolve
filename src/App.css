@@ -18,7 +18,7 @@ body, html {
 
 /* HEADER / NAVBAR */
 .header {
-  background: rgba(255, 255, 255, 0.6);  display: flex;
+  background: rgba(255, 255, 255, 0.3);  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
@@ -62,7 +62,7 @@ background-image: url("./images/nfc.webp");
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: center;
   color: #fff;
   padding-top: 80px; /* accounts for fixed header */
 }
