@@ -1,38 +1,50 @@
 import React from 'react';
 import './App.css';
-import log from './images/log.svg'; // Ensure your logo image is saved here
+import log from './images/log.svg';
+import { motion } from 'framer-motion';
 
 function App() {
   return (
     <div className="container">
       {/* HEADER / NAVBAR */}
       <header className="header">
-        <div className="logo-container">
+        <motion.div 
+          className="logo-container" 
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1 }}
+        >
           <img src={log} alt="Swipe to Solve Logo" className="logo" />
-        </div>
+        </motion.div>
         <nav>
           <ul className="nav-list">
-            <li className="nav-item">
-              <a href="#services" className="nav-link">Services</a>
-            </li>
-            <li className="nav-item">
-              <a href="#about" className="nav-link">About</a>
-            </li>
-            <li className="nav-item">
-              <a href="#contact" className="nav-link">Contact</a>
-            </li>
+            <li className="nav-item"><a href="#services">Services</a></li>
+            <li className="nav-item"><a href="#about">About</a></li>
+            <li className="nav-item"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </header>
-{/* work on banner and navbar*/}
+
       {/* HERO SECTION */}
       <section className="hero-section">
         <div className="hero-overlay">
-          <h1 className="hero-title">Swipe. Solve. Succeed.</h1>
-          <p className="hero-subtitle">
-            Innovating NFC &amp; IT solutions for a smarter, contactless future.
-          </p>
-          <button className="cta-button">Learn More</button>
+          <motion.h1 
+            className="hero-title"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Swipe. Solve. Succeed.
+          </motion.h1>
+          <motion.p className="hero-subtitle" animate={{ opacity: [0, 1] }} transition={{ duration: 1.5 }}>
+            Innovating NFC & IT solutions for a smarter, contactless future.
+          </motion.p>
+          <motion.button 
+            className="cta-button"
+            whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(0, 255, 255, 0.8)" }}
+          >
+            Learn More
+          </motion.button>
         </div>
       </section>
 
@@ -40,60 +52,21 @@ function App() {
       <section id="services" className="services-section">
         <h2 className="section-title">Our Services</h2>
         <div className="services-grid">
-          {/* Service 1 */}
-          <div className="service-card">
-            <div className="service-icon">🔒</div>
-            <h3 className="service-title">Access Control</h3>
-            <p className="service-desc">
-              Secure NFC-based entry systems for offices, schools, and more.
-            </p>
-          </div>
-          {/* Service 2 */}
-          <div className="service-card">
-            <div className="service-icon">🕑</div>
-            <h3 className="service-title">Attendance Tracking</h3>
-            <p className="service-desc">
-              Contactless attendance solutions with real-time analytics.
-            </p>
-          </div>
-          {/* Service 3 */}
-          <div className="service-card">
-            <div className="service-icon">💳</div>
-            <h3 className="service-title">Contactless Payments</h3>
-            <p className="service-desc">
-              Fast, secure, and convenient NFC payment systems.
-            </p>
-          </div>
-          {/* Service 4 */}
-          <div className="service-card">
-            <div className="service-icon">⚙️</div>
-            <h3 className="service-title">IT Automation</h3>
-            <p className="service-desc">
-              Streamline workflows and operations with customized IT solutions.
-            </p>
-          </div>
+          {["Access Control", "Attendance Tracking", "Contactless Payments", "IT Automation"].map((service, index) => (
+            <motion.div 
+              key={index} 
+              className="service-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.3 }}
+            >
+              <div className="service-bg"></div>
+              <h3 className="service-title">{service}</h3>
+              <p className="service-desc">Secure and innovative {service.toLowerCase()} solutions.</p>
+            </motion.div>
+          ))}
         </div>
       </section>
-
-      {/* ABOUT SECTION */}
-      <section id="about" className="about-section">
-        <h2 className="section-title">About Swipe to Solve</h2>
-        <p className="about-text">
-          We are committed to revolutionizing the way businesses, schools, and organizations handle security, automation, and data management. Our mission is to simplify technology by integrating fast and reliable NFC solutions into everyday operations.
-        </p>
-      </section>
-
-      {/* CONTACT SECTION */}
-      <section id="contact" className="contact-section">
-        <h2 className="section-title">Get in Touch</h2>
-        <p className="contact-text">Ready to go contactless? Let's work together!</p>
-        <button className="cta-button">Contact Us</button>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="footer">
-        <p className="footer-text">© 2025 Swipe to Solve. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
