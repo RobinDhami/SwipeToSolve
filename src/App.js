@@ -7,23 +7,26 @@ function App() {
   return (
     <div className="container">
       {/* HEADER / NAVBAR */}
-      <header className="header">
+      <motion.header 
+        className="header"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <motion.div 
-          className="logo-container" 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
+          className="logo-container"
+          whileHover={{ scale: 1.1 }}
         >
           <img src={log} alt="Swipe to Solve Logo" className="logo" />
         </motion.div>
         <nav>
           <ul className="nav-list">
-            <li className="nav-item"><a href="#services">Services</a></li>
-            <li className="nav-item"><a href="#about">About</a></li>
-            <li className="nav-item"><a href="#contact">Contact</a></li>
+            <motion.li className="nav-item" whileHover={{ scale: 1.1 }}><a href="#services">Services</a></motion.li>
+            <motion.li className="nav-item" whileHover={{ scale: 1.1 }}><a href="#about">About</a></motion.li>
+            <motion.li className="nav-item" whileHover={{ scale: 1.1 }}><a href="#contact">Contact</a></motion.li>
           </ul>
         </nav>
-      </header>
+      </motion.header>
 
       {/* HERO SECTION */}
       <section className="hero-section">
@@ -36,12 +39,18 @@ function App() {
           >
             Swipe. Solve. Succeed.
           </motion.h1>
-          <motion.p className="hero-subtitle" animate={{ opacity: [0, 1] }} transition={{ duration: 1.5 }}>
+          <motion.p 
+            className="hero-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
             Innovating NFC & IT solutions for a smarter, contactless future.
           </motion.p>
           <motion.button 
             className="cta-button"
             whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(0, 255, 255, 0.8)" }}
+            whileTap={{ scale: 0.9 }}
           >
             Learn More
           </motion.button>
@@ -59,6 +68,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.3 }}
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(0, 255, 255, 0.5)" }}
             >
               <div className="service-bg"></div>
               <h3 className="service-title">{service}</h3>
