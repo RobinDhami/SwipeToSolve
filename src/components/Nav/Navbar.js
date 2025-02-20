@@ -6,9 +6,18 @@ import '../font.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredServices, setFilteredServices] = useState([]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    // Simulating search (replace with actual service list filtering)
+    const allServices = ['Web Development', 'App Development', 'SEO', 'Consulting'];
+    setFilteredServices(allServices.filter(service => service.toLowerCase().includes(e.target.value.toLowerCase())));
   };
 
   return (
@@ -17,6 +26,7 @@ const Navbar = () => {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
+      style={{ backgroundColor: '#your_solve_color' }} // Replace with Solve color
     >
       <motion.div className="logo" whileHover={{ scale: 1.1 }}>
         <span className="logo-main">Swipe</span><span className="highlight">Solve</span>
@@ -37,6 +47,23 @@ const Navbar = () => {
           </motion.li>
         ))}
       </ul>
+
+      <div className="search-container">
+        <input 
+          type="text" 
+          value={searchTerm} 
+          onChange={handleSearch} 
+          className="search-bar" 
+          placeholder="Search Services"
+        />
+        {searchTerm && (
+          <div className="search-results">
+            {filteredServices.map((service, index) => (
+              <div key={index} className="search-item">{service}</div>
+            ))}
+          </div>
+        )}
+      </div>
 
       <AnimatePresence>
         {isOpen && (

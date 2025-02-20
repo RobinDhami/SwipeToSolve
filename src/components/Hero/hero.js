@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './hero.css';
+import nfc from './nnffcc.jpg';  // Import the image correctly
 
 const HeroSection = () => {
   return (
-    <section className="hero-section" style={{ background: 'linear-gradient(180deg, #1f1c2c, #928DAB)' }}>
+    <section className="hero-section" style={{ background: 'linear-gradient(180deg, #36434B, #24292F)' }}>
       <div className="hero-content">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }} 
@@ -34,7 +35,7 @@ const HeroSection = () => {
 
       {/* Background PNG Image Positioned Right */}
       <motion.img 
-        src="path_to_your_image.png" 
+        src={nfc}  // Use the nfc variable directly
         alt="People using NFC cards" 
         className="hero-image-bg"
         initial={{ opacity: 0, scale: 0.8 }} 
