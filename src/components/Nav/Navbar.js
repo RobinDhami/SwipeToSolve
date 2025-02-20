@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
+import '../font.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
     >
       <motion.div className="logo" whileHover={{ scale: 1.1 }}>
-        <span>Swipe</span><span className="highlight">Solve</span>
+        <span className="logo-main">Swipe</span><span className="highlight">Solve</span>
       </motion.div>
 
       <div className="menu-icon" onClick={toggleMenu}>
@@ -29,7 +30,8 @@ const Navbar = () => {
         {['Home', 'Services', 'About', 'Contact'].map((link, index) => (
           <motion.li 
             key={index}
-            whileHover={{ scale: 1.1, color: '#00ffff' }}
+            whileHover={{ scale: 1.1, color: '#FFD700' }}
+            className="nav-item"
           >
             <a href={`#${link.toLowerCase()}`}>{link}</a>
           </motion.li>
@@ -49,7 +51,7 @@ const Navbar = () => {
               <motion.a 
                 key={index} 
                 href={`#${link.toLowerCase()}`}
-                whileHover={{ scale: 1.1, color: '#00ffff' }}
+                whileHover={{ scale: 1.1, color: '#FFD700' }}
               >
                 {link}
               </motion.a>
