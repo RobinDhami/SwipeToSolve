@@ -29,7 +29,7 @@ const Navbar = () => {
       style={{ backgroundColor: '#your_solve_color' }} // Replace with Solve color
     >
       <motion.div className="logo" whileHover={{ scale: 1.1 }}>
-        <span className="logo-main">Swipe</span><span className="highlight">Solve</span>
+        <span className="logo-main">Tap</span><span className="highlight">Solve</span>
       </motion.div>
 
       <div className="menu-icon" onClick={toggleMenu}>
