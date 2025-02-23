@@ -1,0 +1,68 @@
+/* services.css */
+
+.services-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    color: white;
+  }
+  
+  .services-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+  }
+  
+  .service-icon svg {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+  }
+  
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .service-card {
+      width: 80%;
+    }
+  }
+  
