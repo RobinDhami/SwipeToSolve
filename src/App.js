@@ -1,17 +1,23 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/Nav/Navbar.js';
-import HeroSection from './components/Hero/hero.js';
-import ServicesSection from "./components/Services/services"
+import ThreeJSBackground from './components/ThreeJSBackground';
+import Navbar from './components/Navbar/Navbar';
+import HeroSection from './components/Hero/HeroSection';
+import Services from './components/Services/services';
 
-function App() {
+const App = () => {
   return (
-    <div className="container">
-    <Navbar />
-    <HeroSection />
-    <ServicesSection/>
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* 3D Background */}
+      <ThreeJSBackground />
+
+      {/* Main Content */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Navbar />
+        <HeroSection />
+        <Services />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
