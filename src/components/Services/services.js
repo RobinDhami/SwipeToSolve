@@ -1,28 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Nfc, User, Calendar, Lock } from 'lucide-react';
+import { Nfc, User, Calendar, Lock } from 'lucide-react';  // Make sure lucide-react is installed
 import './services.css';
 
 const services = [
   {
     title: 'NFC Business Cards',
     icon: <Nfc size={40} />,
-    description: 'Seamless contact sharing with NFC-enabled business cards.'
+    description: 'Seamless contact sharing with NFC-enabled business cards.',
+    link: '/nfc-cards'  // Example link to browse options
   },
   {
-    title: 'vCard Integration',
-    icon: <User size={40} />,
-    description: 'Instantly download contact details through vCard QR codes.'
-  },
-  {
-    title: 'Contactless Attendance',
+    title: 'Attendance System',
     icon: <Calendar size={40} />,
-    description: 'Track attendance with NFC scans and real-time updates.'
+    description: 'Track attendance with NFC scans and real-time updates.',
+    link: '/attendance-system'  // Will show "Coming Soon"
   },
   {
-    title: 'Smart Access Control',
+    title: 'Contactless Payment',
     icon: <Lock size={40} />,
-    description: 'Secure, contactless access to facilities using NFC cards.'
+    description: 'Enable secure and easy contactless payments.',
+    link: '/payment-system'  // Will show "Coming Soon"
   }
 ];
 
@@ -51,6 +49,9 @@ const ServicesSection = () => {
             <div className="service-icon">{service.icon}</div>
             <h3 className="service-title">{service.title}</h3>
             <p className="service-description">{service.description}</p>
+            <a href={service.link} className="service-link">
+              {service.title === 'NFC Business Cards' ? 'Browse Options' : 'Coming Soon'}
+            </a>
           </motion.div>
         ))}
       </div>

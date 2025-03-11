@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './hero.css';
-import nfc from './nnffcc.jpg';  // Import the image correctly
+import nfc from './nnffcc.svg';  // Import the image correctly
 
 const HeroSection = () => {
   return (
