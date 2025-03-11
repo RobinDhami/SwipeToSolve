@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Nav/Navbar' ;
 import HeroSection from './components/Hero/hero' ;
 import Services from './components/Services/services';
-
+import ContactSection from './components/Contact/About'
 const App = () => {
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
@@ -13,6 +13,7 @@ const App = () => {
         <Navbar />
         <HeroSection />
         <Services />
+        <ContactSection/>
       </div>
     </div>
   );
